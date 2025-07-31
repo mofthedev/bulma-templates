@@ -1,0 +1,20 @@
+<div class="pricing-table">
+
+    {{?it.plans}}
+        {{~ it.plans :plan }}
+            <div class="pricing-plan {{?plan.active}}is-active{{?}} {{=plan.class || ''}}">
+                <div class="plan-header">{{=plan.header || ''}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">{{=plan.currency || ''}}</span>{{=plan.price || ''}}</span>/{{=plan.period || ''}}</div>
+                <div class="plan-items">
+                    {{~ plan.items :item }}
+                        <div class="plan-item">{{=item || '-'}}</div>
+                    {{~}}
+                </div>
+                <div class="plan-footer">
+                    <button class="button is-fullwidth" {{?plan.onclick}}onclick="({{=plan.onclick}})();"{{?}} {{?plan.disabled}}disabled="disabled"{{?}}>{{=plan.button || ''}}</button>
+                </div>
+            </div>
+        {{~}}
+    {{?}}
+
+</div>

@@ -1,0 +1,33 @@
+<table class="table {{=it.class || 'is-bordered is-striped is-hoverable is-fullwidth'}}">
+
+  {{?it.cols}}
+    <thead>
+      <tr>
+        {{~ it.cols :col }}
+          <th>{{=col}}</th>
+        {{~}}
+      </tr>
+    </thead>
+
+    {{?it.tfoot}}
+      <tfoot>
+        <tr>
+          {{~ it.cols :col }}
+            <th>{{=col}}</th>
+          {{~}}
+        </tr>
+      </tfoot>
+    {{?}}
+  {{?}}
+
+  <tbody>
+    {{~ it.data :row }}
+    <tr>
+      {{~ row :d }}
+        <td>{{=d}}</td>
+      {{~}}
+    </tr>
+    {{~}}
+  </tbody>
+
+</table>

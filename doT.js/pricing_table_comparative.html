@@ -1,0 +1,34 @@
+<div class="pricing-table is-comparative">
+    {{ var feature_list = []; }}
+    {{?it.features}}
+        <div class="pricing-plan is-features">
+            <div class="plan-header">{{=it.features.header || ''}}</div>
+            <div class="plan-price"><span class="plan-price-amount">&nbsp;</span></div>
+            <div class="plan-items">
+                {{~ it.features.items :item }}
+                    <div class="plan-item">{{=item || '-'}}</div>
+                    {{ feature_list.push(item); }}
+                {{~}}
+            </div>
+            <div class="plan-footer"></div>
+        </div>
+    {{?}}
+
+    {{?it.plans}}
+        {{~ it.plans :plan }}
+            <div class="pricing-plan {{?plan.active}}is-active{{?}} {{=plan.class || ''}}">
+                <div class="plan-header">{{=plan.header || ''}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">{{=plan.currency || ''}}</span>{{=plan.price || ''}}</span>/{{=plan.period || ''}}</div>
+                <div class="plan-items">
+                    {{ for(var i=0;i<feature_list.length;i++){ }}
+                        <div class="plan-item" data-feature="{{=feature_list[i]}}">{{=plan.items[i] || '-'}}</div>
+                    {{ } }}
+                </div>
+                <div class="plan-footer">
+                    <button class="button is-fullwidth" {{?plan.onclick}}onclick="({{=plan.onclick}})();"{{?}} {{?plan.disabled}}disabled="disabled"{{?}}>{{=plan.button || ''}}</button>
+                </div>
+            </div>
+        {{~}}
+    {{?}}
+
+</div>

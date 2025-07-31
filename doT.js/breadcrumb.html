@@ -1,0 +1,8 @@
+<nav class="breadcrumb {{=it.class || ''}}" aria-label="breadcrumbs">
+  <ul>
+    {{~ it.items :item }}
+      <li><a href="{{=item[0]}}">{{=item[1]}}</a></li>
+    {{~}}
+    <li class="is-active"><a href="#" aria-current="page">{{=it.text || ''}}</a></li>
+  </ul>
+</nav>
