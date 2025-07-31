@@ -1,0 +1,8 @@
+<nav class="breadcrumb {{ class }}" aria-label="breadcrumbs">
+  <ul>
+    {{# items }}
+      <li><a href="{{ href }}">{{ innerText }}</a></li>
+    {{/ items }}
+    <li class="is-active"><a href="#" aria-current="page">{{ text }}</a></li>
+  </ul>
+</nav>

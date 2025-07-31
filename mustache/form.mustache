@@ -1,0 +1,7 @@
+<form 
+    {{# action }}action="{{ action }}"{{/ action }}
+    {{# textto }}data-textto="{{ textto }}"{{/ textto }}
+    {{# onresponse }}data-onresponse="{{ onresponse }}"{{/ onresponse }}
+    method="{{# method }}{{ method }}{{/ method }}{{^ method }}POST{{/ method }}">
+    {{# text }}{{ text }}{{/ text }}{{^ text }}{{/ text }}
+</form>

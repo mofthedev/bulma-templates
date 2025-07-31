@@ -1,0 +1,34 @@
+<table class="table {{# class }}{{ class }}{{/ class }}{{^ class }}is-bordered is-striped is-hoverable is-fullwidth{{/ class }}">
+
+    {{# cols.0 }}
+        <thead>
+            <tr>
+            {{# cols }}
+                <th>{{ . }}</th>
+            {{/ cols }}
+            </tr>
+        </thead>
+
+        {{# tfoot }}
+        <tfoot>
+            <tr>
+            {{# cols }}
+                <th>{{ . }}</th>
+            {{/ cols }}
+            </tr>
+        </tfoot>
+        {{/ tfoot }}
+
+    {{/ cols.0 }}
+
+    <tbody>
+        {{# data }}
+            <tr>
+            {{# . }}
+                <td>{{ . }}</td>
+            {{/ . }}
+            </tr>
+        {{/ data }}
+    </tbody>
+
+</table>

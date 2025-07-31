@@ -1,0 +1,32 @@
+{{% ANCHORED-DOT }}
+<div class="pricing-table">
+
+    {{# plans }}
+
+        <div class="pricing-plan
+            {{# .active }}is-active{{/ .active }}
+            {{ .class }}">
+            <div class="plan-header">{{ .header }}</div>
+            <div class="plan-price">
+                <span class="plan-price-amount">
+                <span class="plan-price-currency">{{ .currency }}</span>
+                {{ .price }}
+                </span>/{{ .period }}
+            </div>
+            <div class="plan-items">
+                {{# .items }}
+                    <div class="plan-item">{{# . }}{{ . }}{{/ . }}{{^ . }}-{{/ . }}</div>
+                {{/ .items }}
+            </div>
+            <div class="plan-footer">
+                <button class="button is-fullwidth"
+                    {{# .onclick }}onclick="{{ . }}"{{/ .onclick }}
+                    {{# .disabled }}disabled="disabled"{{/ .disabled }}>
+                    {{ .button }}
+                </button>
+            </div>
+        </div>
+
+    {{/ plans }}
+
+</div>

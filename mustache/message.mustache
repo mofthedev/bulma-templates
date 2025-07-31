@@ -1,0 +1,11 @@
+<article class="message {{# class }}{{ class }}{{/ class }}{{^ class }}is-info{{/ class }}">
+    {{# title }}
+    <div class="message-header">
+      <p>{{# title }}{{ title }}{{/ title }}</p>
+      <button class="delete" aria-label="delete" onclick="this.parentNode.parentNode.remove();"></button>
+    </div>
+    {{/ title }}
+    <div class="message-body">
+        {{# text }}{{ text }}{{/ text }}
+    </div>
+</article>

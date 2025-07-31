@@ -1,0 +1,32 @@
+<div class="card">
+
+    {{# title }}
+        <header class="card-header">
+            <p class="card-header-title">{{ title }}</p>
+
+            {{# icon }}
+                <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        {{ icon }}
+                    </span>
+                </button>
+            {{/ icon }}
+
+        </header>
+    {{/ title }}
+    
+    {{# text }}
+        <div class="card-content">
+            {{ text }}
+        </div>
+    {{/ text }}
+
+    {{# footer }}
+        <footer class="card-footer">
+            {{# footer }}
+                <p class="card-footer-item"><span>{{ . }}</span></p>
+            {{/ footer }}
+        </footer>
+    {{/ footer }}
+
+</div>

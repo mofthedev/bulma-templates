@@ -1,0 +1,13 @@
+<div class="field">
+    {{# label}}<label class="label">{{ label }}</label>{{/ label}}
+    <div class="control {{# icon_left }}has-icons-left{{/ icon_left }} {{# icon_right }}has-icons-right{{/ icon_right }}">
+        <input class="input" name="{{ name }}" type="{{# type }}{{ type }}{{/ type }}{{^ type }}text{{/ type }}" {{ attributes }} {{# placeholder}}placeholder="{{ placeholder }}"{{/ placeholder}}>
+        <span class="icon is-small is-left">
+            <i class="{{# icon_left }}{{ icon_left }}{{/ icon_left}}{{^ icon_left }}fas fa-envelope{{/ icon_left}}"></i>
+        </span>
+        <span class="icon is-small is-right">
+            <i class="{{# icon_right }}{{ icon_right }}{{/ icon_right}}{{^ icon_right }}fas fa-check{{/ icon_right}}"></i>
+        </span>
+    </div>
+    {{# help }}<p class="help">{{ help }}</p>{{/ help }}
+</div>

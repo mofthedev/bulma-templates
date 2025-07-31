@@ -1,0 +1,16 @@
+<div class="navbar-brand">
+    <a class="navbar-item" href="{{# logo_link }}{{ logo_link }}{{/ logo_link }}{{^ logo_link }}#{{/ logo_link }}">
+        <img
+            src="{{# logo_image }}{{ logo_image }}{{/ logo_image }}{{^ logo_image }}#{{/ logo_image }}"
+            width="{{# logo_width }}{{ logo_width }}{{/ logo_width }}{{^ logo_width }}32{{/ logo_width }}"
+            height="{{# logo_height }}{{ logo_height }}{{/ logo_height }}{{^ logo_height }}32{{/ logo_height }}">
+        <div class="brand-name">{{ brand_name }}</div>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+        data-target="{{# burger_target }}{{ burger_target }}{{/ burger_target }}{{^ burger_target }}navbarBasic{{/ burger_target }}">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+</div>
