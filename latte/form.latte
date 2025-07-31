@@ -1,0 +1,3 @@
+<form {ifset $action}action="{$action}"{/ifset} {ifset $textto}data-textto="{$textto}"{/ifset} {ifset $onresponse}data-onresponse="{$onresponse}"{/ifset} method="{$method ?? 'POST'}">
+    {$text ?? ''}
+</form>

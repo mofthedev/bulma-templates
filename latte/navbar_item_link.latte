@@ -1,0 +1,3 @@
+<a class="navbar-item" {ifset $href}href="{$href}"{/ifset} {ifset $onclick}onclick="({$onclick})();"{/ifset}>
+    {$text ?? ''}
+</a>

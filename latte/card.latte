@@ -1,0 +1,32 @@
+<div class="card">
+
+    {ifset $title}
+        <header class="card-header">
+            <p class="card-header-title">{$title}</p>
+
+            {ifset $icon}
+                <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        {$icon}
+                    </span>
+                </button>
+            {/ifset}
+
+        </header>
+    {/ifset}
+    
+    {ifset $text}
+        <div class="card-content">
+            {$text}
+        </div>
+    {/ifset}
+
+    {ifset $footer}
+        <footer class="card-footer">
+            {foreach $footer as $theitem}
+                <p class="card-footer-item"><span>{$theitem}</span></p>
+            {/foreach}
+        </footer>
+    {/ifset}
+
+</div>

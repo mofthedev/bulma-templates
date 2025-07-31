@@ -1,0 +1,34 @@
+<table class="table {$class ?? 'is-bordered is-striped is-hoverable is-fullwidth'}">
+
+  {ifset $cols}
+    <thead>
+      <tr>
+        {foreach $cols as $col}
+          <th>{$col}</th>
+        {/foreach}
+      </tr>
+    </thead>
+
+    {ifset $tfoot}
+      <tfoot>
+        <tr>
+          {foreach $cols as col}
+            <th>{$col}</th>
+          {/foreach}
+        </tr>
+      </tfoot>
+    {/ifset}
+
+  {/ifset}
+
+  <tbody>
+    {foreach $data as $row}
+    <tr>
+      {foreach $row as $d}
+        <td>{$d}</td>
+      {/foreach}
+    </tr>
+    {/foreach}
+  </tbody>
+
+</table>

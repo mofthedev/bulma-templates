@@ -1,0 +1,4 @@
+{layout 'section.latte'}
+{block text}
+    {include 'container.latte' with blocks, class:'is-fluid', text: $text ?? ''}
+{/block}

@@ -1,0 +1,20 @@
+<div class="pricing-table">
+
+    {ifset $plans}
+        {foreach $plans as $plan}
+            <div class="pricing-plan {if $plan->active}is-active{/if} {$plan->class ?? ''}">
+                <div class="plan-header">{$plan->header ?? ''}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">{$plan->currency ?? ''}</span>{$plan->price ?? ''}</span>/{$plan->period ?? ''}</div>
+                <div class="plan-items">
+                    {foreach $plan->items as $item}
+                        <div class="plan-item">{$item ?? '-'}</div>
+                    {/foreach}
+                </div>
+                <div class="plan-footer">
+                    <button class="button is-fullwidth" {ifset $plan->onclick}onclick="({$plan->onclick})();"{/ifset} {ifset $plan->disabled}disabled="disabled"{/ifset}>{$plan->button ?? ''}</button>
+                </div>
+            </div>
+        {/foreach}
+    {/ifset}
+
+</div>

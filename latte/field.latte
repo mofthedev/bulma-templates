@@ -1,0 +1,17 @@
+<div class="field">
+    {ifset $label}<label class="label">{$label}</label>{/ifset}
+    <div class="control {ifset $icon_left}has-icons-left{/ifset} {ifset $icon_right}has-icons-right{/ifset}">
+        <input class="input" name="{$name ?? ''}" type="{$type ?? 'text'}" {$attributes ?? ''} {ifset $placeholder}placeholder="{$placeholder}"{/ifset}>
+        {ifset $icon_left}
+        <span class="icon is-small is-left">
+            <i class="{$icon_left ?? 'fas fa-envelope'}"></i>
+        </span>
+        {/ifset}
+        {ifset $icon_right}
+        <span class="icon is-small is-right">
+            <i class="{$icon_left ?? 'fas fa-check'}"></i>
+        </span>
+        {/ifset}
+    </div>
+    {ifset $help}<p class="help">{$help}</p>{/ifset}
+</div>

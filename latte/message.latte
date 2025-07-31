@@ -1,0 +1,11 @@
+<article class="message {$class ?? 'is-info'}">
+    {{?it.title}}
+    <div class="message-header">
+      <p>{$title ?? ''}</p>
+      <button class="delete" aria-label="delete" onclick="this.parentNode.parentNode.remove();"></button>
+    </div>
+    {{?}}
+    <div class="message-body">
+        {$text ?? ''}
+    </div>
+</article>
